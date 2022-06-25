@@ -1,0 +1,16 @@
+{
+    "name": "javielrezende/videos-catalog",
+    "description": "Videos catalog app with laravel",
+    "authors": [
+        {
+            "name": "Roger Rezende",
+            "email": "javielrezende@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "src/Core"
+        }
+    },
+    "require": {}
+}
