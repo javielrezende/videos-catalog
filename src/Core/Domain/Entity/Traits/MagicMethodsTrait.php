@@ -1,13 +1,13 @@
 <?php
 
-namespace Core\Entity\Traits;
+namespace Core\Domain\Entity\Traits;
 
 use Exception;
 
 trait MagicMethodsTrait {
     public function __get($property)
     {
-        if($this->{$property}) {
+        if(isset($this->{$property})) {
             return $this->{$property};
         }
 
