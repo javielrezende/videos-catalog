@@ -88,9 +88,23 @@ class CategoryUnitTest extends TestCase {
     public function testThrowExcepetionWhenUpdateName()
     {
         try {
-            $category = new Category(
+            new Category(
                 name: 'Ca',
                 description: 'Category 5 description'
+            );
+
+            $this->assertTrue(false);
+        } catch (Throwable $th) {
+            $this->assertInstanceOf(EntityValidationException::class, $th);
+        }
+    }
+
+    public function testThrowExcepetionWhenUpdateDescription()
+    {
+        try {
+            new Category(
+                name: 'Category 6',
+                description: random_bytes(9999)
             );
 
             $this->assertTrue(false);
