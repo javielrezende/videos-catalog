@@ -18,14 +18,18 @@ class CreateCategoryUseCaseUnitTest extends TestCase {
         $categoryId = '1';
         $categoryName = 'Category 1';
 
-        $this->mockEntity = Mockery::mock(Category::class, [
-            $categoryId,
-            $categoryName
-        ]);
+        // $this->mockEntity = Mockery::mock(Category::class, [
+        //     $categoryId,
+        //     $categoryName
+        // ]);
         $this->mockRepository = Mockery::mock(stdClass::class, CategoryRepositoryInterface::class);
-        $this->mockRepository->shouldReceive('insert')->andReturn($this->mockEntity);
+        $this->mockRepository->shouldReceive('insert'); //->andReturn($this->mockEntity);
 
         $useCase = new CreateCategoryUseCase($this->mockRepository);
         $useCase->execute();
+
+        $this->assertTrue(true);
+
+        Mockery::close();
     }
 }
