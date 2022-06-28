@@ -16,6 +16,7 @@ class CategoryUnitTest extends TestCase {
             description: 'Category 1 description'
         );
 
+        $this->assertNotEmpty($category->createdAt());
         $this->assertNotEmpty($category->id());
         $this->assertEquals('Category 1', $category->name);
         $this->assertEquals('Category 1 description', $category->description);
