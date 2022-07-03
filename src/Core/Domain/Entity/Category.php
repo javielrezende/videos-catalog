@@ -41,7 +41,7 @@ class Category {
         $this->description = $description ?? $this->description;
     }
 
-    public function validate()
+    private function validate()
     {
         DomainValidation::notNull($this->name);
         DomainValidation::maximumLength($this->name);
